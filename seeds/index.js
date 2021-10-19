@@ -21,7 +21,28 @@ const seedDB = async () => {
         const camp = await new Campground({
             location: `${cities[random1000].city}, ${cities[random1000].state}`,
             title: `${sample(descriptors)} ${sample(places)}`,
-            image: "https://source.unsplash.com/collection/483251",
+            images: [
+                {
+                    url: 'https://res.cloudinary.com/b32bwew/image/upload/v1634646944/YelpCamp/zxy3gkrn0e1msgjs0bvo.jpg',
+                    filename: 'YelpCamp/zxy3gkrn0e1msgjs0bvo',
+                },
+                {
+                    url: 'https://res.cloudinary.com/b32bwew/image/upload/v1634646944/YelpCamp/ogu89qgkvxse8hecntqo.jpg',
+                    filename: 'YelpCamp/ogu89qgkvxse8hecntqo',
+                },
+                {
+                    url: 'https://res.cloudinary.com/b32bwew/image/upload/v1634646944/YelpCamp/xjv9grxdkya6hx25gpam.jpg',
+                    filename: 'YelpCamp/xjv9grxdkya6hx25gpam',
+                },
+                {
+                    url: 'https://res.cloudinary.com/b32bwew/image/upload/v1634646944/YelpCamp/lkmhtsobk3lc7ksliwkt.jpg',
+                    filename: 'YelpCamp/lkmhtsobk3lc7ksliwkt',
+                },
+                {
+                    url: 'https://res.cloudinary.com/b32bwew/image/upload/v1634646944/YelpCamp/nlez0s9csskbmlfprofn.jpg',
+                    filename: 'YelpCamp/nlez0s9csskbmlfprofn',
+                }
+            ],
             description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem atque placeat blanditiis harum soluta ea modi doloribus laudantium, dicta iure mollitia porro natus. Aspernatur ducimus quidem amet, blanditiis doloribus officiis",
             price,
             author: "616c52f4f32448310227a226"
