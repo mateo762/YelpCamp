@@ -2,8 +2,11 @@ const mongoose = require("mongoose");
 const Campground = require("../models/campground");
 const cities = require("./cities");
 const { places, descriptors } = require("./seedHelpers");
+//const dbUrl = process.env.DB_URL || "mongodb://localhost:27017/yelp-camp";
+const dbUrl = "mongodb+srv://mateo:0v9rXTxz3OnG3YRj@cluster0.zoibs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
-mongoose.connect("mongodb://localhost:27017/yelp-camp", { useNewUrlParser: true, useUnifiedTopology: true });
+console.log(dbUrl);
+mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
@@ -51,7 +54,7 @@ const seedDB = async () => {
             },
             description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem atque placeat blanditiis harum soluta ea modi doloribus laudantium, dicta iure mollitia porro natus. Aspernatur ducimus quidem amet, blanditiis doloribus officiis",
             price,
-            author: "616c52f4f32448310227a226"
+            author: "6175a399742a3ab9e1cb9e10"
         })
         await camp.save();
     }
